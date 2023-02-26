@@ -2,61 +2,62 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Thomas</title>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Personality Test</title>
+    <link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
-    <script type="module" src="./js/main.js"></script>
-    <h1>Thomasinator</h1>
-    <div id="quiz-area">
-      <section class="q-n-a">
-        <h3 class="question">Text for question 1</h3>
-        <div class="answers">
-          <button class="answer" data-value="1">1</button>
-          <button class="answer" data-value="2">2</button>
-          <button class="answer" data-value="3">3</button>
-          <button class="answer" data-value="4">4</button>
-        </div>
-        <div class="button-holder">&ksjbdf</div>
-      </section>
-
-      <section class="q-n-a">
-        <h3 class="question">Text for question 2</h3>
-        <div class="answers">
-          <button class="answer" data-value="1">5</button>
-          <button class="answer" data-value="2">6</button>
-          <button class="answer" data-value="3">7</button>
-          <button class="answer" data-value="4">8</button>
-        </div>
-        <div class="button-holder">&ksjbdf</div>
-      </section>
-
-      <section class="q-n-a">
-        <h3 class="question">Text for question 3</h3>
-        <div class="answers">
-          <button class="answer" data-value="1">9</button>
-          <button class="answer" data-value="2">10</button>
-          <button class="answer" data-value="3">11</button>
-          <button class="answer" data-value="4">12</button>
-        </div>
-        <div class="button-holder">&ksjbdf</div>
-      </section>
-
-      <section class="q-n-a">
-        <h3 class="question">Text for question 1</h3>
-        <div class="answers">
-          <button class="answer" data-value="1">13</button>
-          <button class="answer" data-value="2">14</button>
-          <button class="answer" data-value="3">15</button>
-          <button class="answer" data-value="4">16</button>
-        </div>
-        <div class="button-holder">&ksjbdf</div>
-      </section>
+    <nav>
+      <ul class="nav-bar">
+        <li class="nav-item"><a href="#">Home</a></li>
+        <li class="nav-item"><a href="#">About</a></li>
+        <li class="nav-item"><a href="#">Contact</a></li>
+      </ul>
+    </nav>
+    <div class="welcome">
+      <img class="header-image" src="img/header.png" alt="header image" />
+      <div class="start-test" onclick="startTest()">Start test</div>
     </div>
-    <button class="button-finish">what am i</button>
-    <div class="response">
-      <p></p>
+
+    <div class="container">
+      <div class="question-container">
+        <div id="question-count">Question <span id="counter"></span>/5</div>
+        <div id="question"></div>
+        <div class="ans" id="div-ans-a" onclick="selectedAnswer(0)">
+          <span class="my-alpha">A</span><span id="ans-a"></span>
+        </div>
+        <div class="ans" id="div-ans-b" onclick="selectedAnswer(1)">
+          <span class="my-alpha">B</span><span id="ans-b"></span>
+        </div>
+        <div class="ans" id="div-ans-c" onclick="selectedAnswer(2)">
+          <span class="my-alpha">C</span><span id="ans-c"></span>
+        </div>
+        <div class="ans" id="div-ans-d" onclick="selectedAnswer(3)">
+          <span class="my-alpha">D</span><span id="ans-d"></span>
+        </div>
+        <div class="btn">
+          <div id="previous" onclick="previousQuestion()">< Previous</div>
+          <div id="next" onclick="nextQuestion()">Next question ></div>
+          <div id="restart" onclick="restartQuestion()">Restart</div>
+        </div>
+
+        <div id="test-result">
+          <img src="img/introvert.png" id="image" />
+          <div id="trait">
+            <strong id="trait-title"></strong> <br />
+            <div>Your personalities traits includes:</div>
+            <ul id="personalities"></ul>
+          </div>
+        </div>
+      </div>
+      <div class="your-answers">
+        <div class="title">Your selected answers.</div>
+        <div id="answers"></div>
+      </div>
     </div>
+
+    <script src="js/db.js"></script>
+    <script src="js/script.js"></script>
   </body>
 </html>
