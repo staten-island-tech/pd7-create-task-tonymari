@@ -3,7 +3,7 @@ import { DOMSelectors } from "./dom";
 
 var questions = $(".question").length;
 var total = 0;
-var average = 0;
+var avg = 0;
 var myQuestions = $("section.q-n-a");
 
 shuffle(myQuestions);
