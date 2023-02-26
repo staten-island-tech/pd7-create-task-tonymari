@@ -32,7 +32,7 @@ html{
   .answer:hover{
   background-color: cadetblue;
   }
-  .answer.clearfix:after{
+  .answer::after{
     background-color: aquamarine;
   }
 
