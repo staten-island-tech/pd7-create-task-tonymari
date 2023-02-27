@@ -1,16 +1,16 @@
-+
+
 html{
-  background-color: #2b3e50;
+  background-color: #00d5ff;
   }
   body{
-  background-color: white;
+  background-color: rgb(13, 107, 196);
   font-size: 100%; text-align:center;
   width: 800px;
   margin: 10px auto;
   padding: 20px;
   border-radius: 1em;}
   
-  h1{color: cadetblue;}
+  h1{color: rgb(43, 13, 179);}
   h3.question{
   font-size: 2em; 
   }
@@ -19,8 +19,8 @@ html{
   font-size: 1.5em;
   }
   .answer{
-  background-color: #df691a;
-  color: rgb(255, 255, 255);
+  background-color: #a0e8ea;
+  color: rgb(35, 25, 135);
   border-radius: 10px;
   padding: 1em;
   text-align: center;
@@ -38,27 +38,13 @@ html{
 
   .button{
   background-color: cadetblue;
-  color: white;
+  color: rgb(139, 21, 21);
   border-radius: 10px;
   padding: 10px 5px; text-align: center;
   cursor: pointer; font-size: 2em;}
   
-  .mini.button{
-  display: block;
-  width: 30%;
-  }
-  .next{
-  float: right;
-  }
-  .previous {float: left;
-  }
   .button: hover{ background-color: #80b7b9;
   }
-  .button-holder{
-  width: 60%;
-  padding: .5em 0;
-  
-  margin: .5em auto;}
   .clearfix:before,
   .clearfix:after { content: " ";
   display: table;
@@ -67,3 +53,17 @@ html{
   }
   .response p{
   margin: 50px auto; font-size: 3em;}
+  .finish{
+    background-color: #c61c47;
+    color: rgb(255, 255, 255);
+    border-radius: 10px;
+    padding: 1em;
+    text-align: center;
+    cursor: pointer;
+    width: 60%;
+    font-size: 1.5em; margin: 80px auto 0;
+    }
+
+    .finish:hover{
+      background-color: rgb(83, 7, 11);
+      }
