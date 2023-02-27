@@ -1,12 +1,12 @@
-var questions = $(".question").length;
-var total = 0;
-var avg = 0;
-var myQuestions = $("section.q-n-a");
+const questions = $(".question").length;
+const total = 0;
+const avg = 0; //
+const myQuestions = $("section.q-n-a");
 
 shuffle(myQuestions);
 
 myQuestions.each(function () {
-  var myAnswers = $(this).find(".answer");
+  const myAnswers = $(this).find(".answer");
   shuffle(myAnswers);
   $(this).find(".answers").html(myAnswers);
 });
@@ -32,7 +32,7 @@ $(".answer").on("click", function () {
 
 $(".finish").on("click", function () {
   avg = total / questions;
-  var message = "";
+  const message = "";
   if ($("selected").length === questions) {
     if (avg < 1.5) {
       message = "you are thomas";
