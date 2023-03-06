@@ -10,6 +10,7 @@ const boo = [
     Dec: "Harsh - very critical, negative to people. Irresponsible - not responsible; not having or showing maturity or good judgment. Patronising - being nice to people but thinking you are better than them. Pessimistic - always expecting bad things to happen; negative about the future.",
   },
 ];
+const history = [];
 
 var steamScore = 0;
 var desielScore = 0;
@@ -33,27 +34,50 @@ var q4a2 = document.getElementById("q4a2");
 var q5a1 = document.getElementById("q5a1");
 var q5a2 = document.getElementById("q5a2");
 
-q1a1.addEventListener("click", steam);
-q1a2.addEventListener("click", desiel);
+q1a1.addEventListener("click", function () {
+  steam("too");
+});
 
-q2a1.addEventListener("click", desiel);
-q2a2.addEventListener("click", steam);
+q1a2.addEventListener("click", function () {
+  desiel("dee");
+});
 
-q3a1.addEventListener("click", steam);
-q3a2.addEventListener("click", desiel);
+q2a1.addEventListener("click", function () {
+  desiel("dee");
+});
+q2a2.addEventListener("click", function () {
+  steam("too");
+});
 
-q4a1.addEventListener("click", desiel);
-q4a2.addEventListener("click", steam);
+q3a1.addEventListener("click", function () {
+  steam("too");
+});
+q3a2.addEventListener("click", function () {
+  desiel("dee");
+});
 
-q5a1.addEventListener("click", steam);
-q5a2.addEventListener("click", desiel);
+q4a1.addEventListener("click", function () {
+  desiel("dee");
+});
+q4a2.addEventListener("click", function () {
+  steam("too");
+});
+
+q5a1.addEventListener("click", function () {
+  steam("too");
+});
+q5a2.addEventListener("click", function () {
+  desiel("dee");
+});
 
 restart.addEventListener("click", restartQuiz);
+
 function steam() {
   steamScore += 1;
   questionCount += 1;
 
-  console.log("questionCount = " + questionCount + "steamScore =" + steamScore);
+  console.log("questionCount = " + questionCount + "steamScore =" + steamScore),
+    history.push("steam");
 
   if (questionCount == 5) {
     console.log("Score done");
@@ -66,7 +90,8 @@ function desiel() {
 
   console.log(
     "questionCount = " + questionCount + "desielScore =" + desielScore
-  );
+  ),
+    history.push("puff");
 
   if (questionCount == 5) {
     console.log("Score done");
@@ -74,18 +99,23 @@ function desiel() {
   }
 }
 function updateResult() {
-  //click button to update result
   displayResult.addEventListener("click", display);
 }
 function display() {
   if (steamScore >= 3) {
     (result.innerHTML =
       "You are a Steamy! A steam engine is a heat engine that performs mechanical work using steam as its working fluid. The steam engine uses the force produced by steam pressure to push a piston back and forth inside a cylinder. This pushing force can be transformed, by a connecting rod and crank, into rotational force for work., they are typically Good character includes traits like loyalty, honesty, courage, integrity, fortitude, and other important virtues that promote good behavior. A person with good character chooses to do the right thing because he or she believes it is the morally right to do so."),
-      console.log(train);
+      console.log("You are an Steamy"),
+      console.log(train),
+      history.push("you got steamy this round "),
+      console.log(history);
   } else if (desielScore >= 3) {
     result.innerHTML =
-      "You are an Desiel! A diesel mechanical locomotive uses a mechanical transmission in a fashion similar to that employed in most road vehicles. This type of transmission is generally limited to low-powered, low speed shunting (switching) locomotives, lightweight multiple units and self-propelled railcars. They are typically Harsh - very critical, negative to people. Irresponsible - not responsible; not having or showing maturity or good judgment. Patronising - being nice to people but thinking you are better than them. Pessimistic - always expecting bad things to happen; negative about the future.";
-    console.log("You are an Desiel"), console.log(boo);
+      "You are an Diesel! A diesel mechanical locomotive uses a mechanical transmission in a fashion similar to that employed in most road vehicles. This type of transmission is generally limited to low-powered, low speed shunting (switching) locomotives, lightweight multiple units and self-propelled railcars. They are typically Harsh - very critical, negative to people. Irresponsible - not responsible; not having or showing maturity or good judgment. Patronising - being nice to people but thinking you are better than them. Pessimistic - always expecting bad things to happen; negative about the future.";
+    console.log("You are an Diesel"),
+      console.log(boo),
+      history.push("you got Diesel this round"),
+      console.log(history);
   }
 }
 function restartQuiz() {
